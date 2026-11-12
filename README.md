@@ -18,6 +18,8 @@ Each daily lesson is **30 minutes**: Words (spaced-repetition flashcards, 8 min)
 
 No build step and no dependencies apart from Google Fonts.
 
+When you change `assets/styles.css` or `assets/app.js`, bump the `?v=` number where they're linked in `index.html` and `mockups.html`, so visitors don't get a stale cached copy.
+
 ## Run locally
 
 ```bash
