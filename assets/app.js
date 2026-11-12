@@ -5,7 +5,7 @@
   // ---------- Analytics (GoatCounter: free, cookie-free, GDPR-friendly) ----------
   // 1. Sign up at https://www.goatcounter.com and pick a code, e.g. "polku".
   // 2. Put that code here. Leave it empty to disable analytics entirely.
-  var GOATCOUNTER_CODE = "";
+  var GOATCOUNTER_CODE = "polku";
 
   if (GOATCOUNTER_CODE) {
     var gc = document.createElement("script");

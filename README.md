@@ -34,7 +34,7 @@ Settings → Pages → Source: *Deploy from a branch* → `main` / root. The sit
 
 The site uses [GoatCounter](https://www.goatcounter.com): free, open source, no cookies, so no cookie banner is needed under GDPR.
 
-**Setup:** create an account at goatcounter.com, choose a code (e.g. `polku`), then set `GOATCOUNTER_CODE` at the top of `assets/app.js` and push. While the code is empty, no analytics script loads at all. Local visits (`localhost`) are never counted.
+**Dashboard:** https://polku.goatcounter.com. To change accounts, edit `GOATCOUNTER_CODE` at the top of `assets/app.js` and push. While the code is empty, no analytics script loads at all. Local visits (`localhost`) are never counted.
 
 **What gets counted**
 
@@ -51,7 +51,6 @@ While the store links are placeholders, clicking a store button shows a “comin
 
 ## TODO before launch
 
-- Set `GOATCOUNTER_CODE` in `assets/app.js` (see Analytics).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
 - Final app name and logo (“Polku” is a placeholder).
