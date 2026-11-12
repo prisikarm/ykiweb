@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polku — App Mockups</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body { background: radial-gradient(1200px 700px at 80% -10%, #1d3f86, transparent 60%), radial-gradient(900px 600px at 0% 100%, #0b4d5a, transparent 60%), #081a36; color: #fff; min-height: 100vh; }
+    .board-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; padding: 56px 0 40px; }
+    .board-head h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; }
+    .board-head p { color: rgba(255,255,255,.7); margin-top: 8px; }
+    .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px 24px; justify-items: center; padding-bottom: 80px; }
+    .board figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .board figcaption { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+    .board figcaption small { display: block; text-align: center; font-family: var(--font-body); font-weight: 500; font-size: 13px; color: rgba(255,255,255,.6); }
+    .board .phone { --pz: .9; }
+    .back { color: rgba(255,255,255,.75); font-size: 14px; }
+    @media (max-width: 1080px) { .board { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 680px) { .board { grid-template-columns: 1fr; } .board .phone { --pz: .86; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="board-head">
+      <div>
+        <a class="back" href="index.html">← Back to site</a>
+        <h1>Polku app mockups</h1>
+        <p>Six core screens for iOS &amp; Android. The screens on the landing page are the same HTML.</p>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Choose language" style="margin:0">
+        <button type="button" data-lang="fi" aria-pressed="true"><span class="flag fi"></span>Suomi</button>
+        <button type="button" data-lang="sv" aria-pressed="false"><span class="flag sv"></span>Svenska</button>
+      </div>
+    </div>
+    <div class="board" id="board"><p>Loading screens…</p></div>
+  </main>
+  <div id="sprite" hidden></div>
+  <script>
+    // The landing page is the single source of truth for the screens: pull them in from index.html.
+    var CAPTIONS = {
+      today: ["Today", "Daily 30-minute lesson plan"],
+      words: ["Flashcards", "Spaced-repetition vocabulary"],
+      read: ["Reading", "Tap-to-translate texts"],
+      listen: ["Listening", "Native audio + exam questions"],
+      speak: ["Speaking", "AI tutor with live scoring"],
+      progress: ["Progress", "CEFR path & YKI readiness"]
+    };
+    fetch("index.html").then(function (r) { return r.text(); }).then(function (html) {
+      var doc = new DOMParser().parseFromString(html, "text/html");
+      var sprite = doc.querySelector("body > svg");
+      if (sprite) document.body.prepend(sprite);
+      var board = document.getElementById("board");
+      board.innerHTML = "";
+      Object.keys(CAPTIONS).forEach(function (key) {
+        var phone = doc.querySelector('.phone[data-screen="' + key + '"]');
+        if (!phone) return;
+        phone.classList.remove("sm");
+        var fig = document.createElement("figure");
+        fig.appendChild(document.importNode(phone, true));
+        var cap = document.createElement("figcaption");
+        cap.innerHTML = CAPTIONS[key][0] + "<small>" + CAPTIONS[key][1] + "</small>";
+        fig.appendChild(cap);
+        board.appendChild(fig);
+      });
+      var s = document.createElement("script");
+      s.src = "assets/app.js";
+      document.body.appendChild(s);
+    }).catch(function () {
+      document.getElementById("board").innerHTML = "<p>Open this page through a web server (e.g. GitHub Pages or <code>python3 -m http.server</code>) to load the screens.</p>";
+    });
+  </script>
+</body>
+</html>

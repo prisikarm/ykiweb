@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polku — Pass the YKI test in Finnish or Swedish</title>
+  <meta name="description" content="30-minute daily lessons that take you from A0 to B1 in six months. Flashcards, reading, listening and speaking practice built around the Finnish YKI language test.">
+  <meta property="og:title" content="Polku — From hei to B1 in six months">
+  <meta property="og:description" content="30 minutes a day. Words, reading, listening and speaking. Built for the YKI test.">
+  <meta name="theme-color" content="#081a36">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-words" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="15" rx="3"/><path d="M7 3h11a3 3 0 0 1 3 3v11"/></symbol>
+    <symbol id="i-read" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5a2 2 0 0 1 2-2h5a3 3 0 0 1 3 3v15a2 2 0 0 0-2-2H2z"/><path d="M22 5a2 2 0 0 0-2-2h-5a3 3 0 0 0-3 3v15a2 2 0 0 1 2-2h8z"/></symbol>
+    <symbol id="i-listen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></symbol>
+    <symbol id="i-speak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-exam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1.5"/><rect x="14" y="4" width="4" height="16" rx="1.5"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.15-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.08 5.84c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.02.08 2.07-.52 2.71-1.29z"/></symbol>
+    <symbol id="i-gplay" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 2.3 13.4 12 3.6 21.7c-.37-.2-.6-.6-.6-1.07V3.37c0-.47.23-.87.6-1.07z"/><path fill="#FBBC04" d="m16.8 8.6 3.5 2c.9.52.9 1.28 0 1.8l-3.5 2L13.4 12z"/><path fill="#4285F4" d="M3.6 2.3c.3-.17.7-.17 1.1.06L16.8 8.6 13.4 12z"/><path fill="#EA4335" d="M13.4 12l3.4 3.4-12.1 6.24c-.4.23-.8.23-1.1.06z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="container">
+    <a href="#" class="logo" aria-label="Polku home">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#fecc02"/><path d="M10 29c4-1 6-5 9-9s6-7 11-8" stroke="#081a36" stroke-width="3.4" fill="none" stroke-linecap="round"/><circle cx="10" cy="29" r="3" fill="#081a36"/><circle cx="30" cy="12" r="3" fill="#081a36"/></svg>
+      Polku
+    </a>
+    <nav class="nav-links">
+      <a href="#method">Method</a>
+      <a href="#screens">Inside the app</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#yki">YKI test</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#download" class="btn">Get the app</a>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="lang-toggle" role="group" aria-label="Choose language">
+        <button type="button" data-lang="fi" aria-pressed="true"><span class="flag fi"></span>Suomi</button>
+        <button type="button" data-lang="sv" aria-pressed="false"><span class="flag sv"></span>Svenska</button>
+      </div>
+      <h1>From <span class="hl" data-t="hello">hei</span> to B1<br>in six months.</h1>
+      <p class="lede">Polku gets you ready for the YKI test in <strong data-t="langName">Finnish</strong> with one focused 30-minute lesson a day: new words, reading, listening and speaking, all in one session.</p>
+      <div class="stores">
+        <a class="store" href="#" aria-label="Download on the App Store (coming soon)">
+          <svg><use href="#i-apple"/></svg>
+          <span><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="store" href="#" aria-label="Get it on Google Play (coming soon)">
+          <svg><use href="#i-gplay"/></svg>
+          <span><small>GET IT ON</small><strong>Google Play</strong></span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>30 min</strong><span>a day</span></div>
+        <div><strong>26 weeks</strong><span>A0 → B1</span></div>
+        <div><strong>4 skills</strong><span>every lesson</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float f1"><span class="ico" style="background:#fff4d6">🔥</span><div><b>23-day streak</b><small>Lesson 47 of 182</small></div></div>
+      <div class="float f2"><span class="ico" style="background:#e8eefc">🃏</span><div><b data-t="floatWord">kirjasto</b><small>= library · due in 4 days</small></div></div>
+      <div class="float f3"><span class="ico" style="background:#dcfce7">🎯</span><div><b>YKI readiness 64%</b><small>On track for B1</small></div></div>
+
+      <!-- SCREEN: Today -->
+      <div class="phone" data-screen="today">
+        <div class="screen">
+          <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+          <div class="pad">
+            <div class="app-top" style="margin-bottom:0">
+              <div><p class="p-eyebrow">Wednesday · Week 14</p><p class="app-title" data-t="greet">Huomenta!</p></div>
+              <span class="streak">🔥 23</span>
+            </div>
+            <div class="lesson-card">
+              <div class="ring" style="--p:50"><span>15<small>of 30 min</small></span></div>
+              <div style="position:relative;z-index:1">
+                <p class="tag">LESSON 47 · A2.2</p>
+                <h5 data-t="topic">Asiointi virastossa</h5>
+                <p class="sub">Running errands at an office</p>
+              </div>
+            </div>
+            <ul class="segs">
+              <li class="done"><span class="ic" style="background:var(--c-words)"><svg><use href="#i-words"/></svg></span><div>Words<small>20 cards · 8 min</small></div><span class="st">✓</span></li>
+              <li class="done"><span class="ic" style="background:var(--c-read)"><svg><use href="#i-read"/></svg></span><div>Read<small>Short article · 7 min</small></div><span class="st">✓</span></li>
+              <li class="now"><span class="ic" style="background:var(--c-listen)"><svg><use href="#i-listen"/></svg></span><div>Listen<small>Announcement · 7 min</small></div><span class="st">▶</span></li>
+              <li class="todo"><span class="ic" style="background:var(--c-speak)"><svg><use href="#i-speak"/></svg></span><div>Speak<small>AI conversation · 8 min</small></div><span class="st"></span></li>
+            </ul>
+          </div>
+          <nav class="tabbar">
+            <span class="on"><svg><use href="#i-home"/></svg>Today</span>
+            <span><svg><use href="#i-words"/></svg>Cards</span>
+            <span><svg><use href="#i-exam"/></svg>Mock YKI</span>
+            <span><svg><use href="#i-chart"/></svg>Progress</span>
+          </nav>
+          <span class="home-ind"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== METHOD ============================== -->
+<section id="method">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow-tag">The 30-minute method</span>
+      <h2>One lesson. Thirty minutes.<br>Every skill the exam tests.</h2>
+      <p>Each day follows the same rhythm, so you never have to plan what to study. Open the app, press start, and you've covered vocabulary, reading, listening and speaking before your coffee gets cold.</p>
+    </div>
+
+    <div class="lesson-bar reveal" aria-label="Lesson timeline">
+      <div class="words">Words <small>8 min</small></div>
+      <div class="read">Read <small>7 min</small></div>
+      <div class="listen">Listen <small>7 min</small></div>
+      <div class="speak">Speak <small>8 min</small></div>
+    </div>
+    <div class="lesson-scale reveal"><span>0:00</span><span>0:08</span><span>0:15</span><span>0:22</span><span>0:30</span></div>
+
+    <div class="skills">
+      <article class="skill reveal">
+        <div class="icon" style="background:var(--c-words)"><svg><use href="#i-words"/></svg></div>
+        <h3>Words</h3>
+        <p>Flashcards with spaced repetition. Every word comes back right before you'd forget it, with native audio and a real example sentence.</p>
+        <span class="min">≈ 2,500 words by B1</span>
+      </article>
+      <article class="skill reveal">
+        <div class="icon" style="background:var(--c-read)"><svg><use href="#i-read"/></svg></div>
+        <h3>Read</h3>
+        <p>Short texts about everyday life in Finland: work, housing, Kela and the doctor. Tap any word to translate it and save it to your deck.</p>
+        <span class="min">YKI-style comprehension questions</span>
+      </article>
+      <article class="skill reveal">
+        <div class="icon" style="background:var(--c-listen)"><svg><use href="#i-listen"/></svg></div>
+        <h3>Listen</h3>
+        <p>Announcements, phone calls and radio clips recorded by native speakers. Slow them down, loop a sentence, and show the transcript when you need it.</p>
+        <span class="min">0.75× to 1.25× playback</span>
+      </article>
+      <article class="skill reveal">
+        <div class="icon" style="background:var(--c-speak)"><svg><use href="#i-speak"/></svg></div>
+        <h3>Speak</h3>
+        <p>Talk with an AI tutor that answers back, then get scored on pronunciation, fluency and grammar. You'll be ready to speak on exam day.</p>
+        <span class="min">Instant feedback, word by word</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SCREENS ============================== -->
+<section class="screens" id="screens">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow-tag">Inside the app</span>
+      <h2>Built for the way you actually learn</h2>
+      <p>Switch between <a href="#" class="js-lang" data-lang="fi"><u>Finnish</u></a> and <a href="#" class="js-lang" data-lang="sv"><u>Swedish</u></a> to preview real lesson content.</p>
+    </div>
+
+    <div class="gallery">
+      <!-- SCREEN: Flashcards -->
+      <figure class="reveal">
+        <div class="phone sm" data-screen="words">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+            <div class="pad">
+              <div class="app-top">
+                <span class="x">✕</span>
+                <div class="mini-progress"><span style="width:60%;background:var(--c-words)"></span></div>
+                <span class="chip">12 / 20</span>
+              </div>
+              <div class="card-stack">
+                <div class="ghost g1"></div><div class="ghost g2"></div>
+                <div class="fcard">
+                  <div class="art">📚</div>
+                  <div class="word" data-t="fcWord">kirjasto</div>
+                  <div class="ipa"><span data-t="fcIpa">/ˈkirjɑsto/</span><i>🔊</i></div>
+                  <hr>
+                  <div class="tr">library</div>
+                  <p class="ex" data-t="fcEx">Menen <b>kirjastoon</b> lauantaina.</p>
+                  <p class="ex-tr">I'm going to the library on Saturday.</p>
+                </div>
+              </div>
+              <div class="grades">
+                <span class="again">Again<small>1 min</small></span>
+                <span class="hard">Hard<small>8 min</small></span>
+                <span class="good">Good<small>1 day</small></span>
+                <span class="easy">Easy<small>4 days</small></span>
+              </div>
+            </div>
+            <span class="home-ind"></span>
+          </div>
+        </div>
+        <figcaption><b>Smart flashcards</b><span>Spaced repetition that learns which words you find hard.</span></figcaption>
+      </figure>
+
+      <!-- SCREEN: Reading -->
+      <figure class="reveal">
+        <div class="phone sm" data-screen="read">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+            <div class="pad">
+              <div class="app-top">
+                <span class="x">✕</span>
+                <div class="mini-progress"><span style="width:40%;background:var(--c-read)"></span></div>
+                <span class="chip" style="background:#d7f5f1;color:#0b6e64">⏱ 04:12</span>
+              </div>
+              <div class="article">
+                <h6 data-t="rdTitle">Uusi työpaikka</h6>
+                <p data-t="rdText">Mari aloitti uudessa työpaikassa maanantaina. Toimisto on lähellä <mark>rautatieasemaa</mark>, joten hän kulkee töihin junalla. Kollegat ovat ystävällisiä, ja lounas syödään yhdessä kello yksitoista.</p>
+                <div class="pop"><b data-t="rdPopW">rautatieasema</b>railway station<br><span class="add">+ Add to deck</span></div>
+              </div>
+              <div class="q">
+                <h6 data-t="rdQ">Miten Mari kulkee töihin?</h6>
+                <div class="opt"><i>A</i><span data-t="rdA">Bussilla</span></div>
+                <div class="opt ok"><i>B</i><span data-t="rdB">Junalla</span></div>
+                <div class="opt"><i>C</i><span data-t="rdC">Pyörällä</span></div>
+              </div>
+            </div>
+            <span class="home-ind"></span>
+          </div>
+        </div>
+        <figcaption><b>Tap-to-translate reading</b><span>Real-life texts with instant glossary and exam-style questions.</span></figcaption>
+      </figure>
+
+      <!-- SCREEN: Listening -->
+      <figure class="reveal">
+        <div class="phone sm" data-screen="listen">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+            <div class="pad">
+              <div class="app-top">
+                <span class="x">✕</span>
+                <div class="mini-progress"><span style="width:55%;background:var(--c-listen)"></span></div>
+                <span class="chip" style="background:#ede7fe;color:#6d4ae8">2 / 4</span>
+              </div>
+              <div class="audio-card">
+                <p class="meta">YKI-STYLE · ANNOUNCEMENT</p>
+                <h6 data-t="lsTitle">Kuulutus rautatieasemalla</h6>
+                <div class="wave" data-bars="38" data-on="0.45"></div>
+                <div class="times"><span>0:21</span><span>0:48</span></div>
+                <div class="controls">
+                  <span>↺ 5s</span>
+                  <span class="play"><svg><use href="#i-pause"/></svg></span>
+                  <span>0.75×</span>
+                </div>
+              </div>
+              <div class="transcript-toggle">Show transcript <span class="switch"></span></div>
+              <div class="q">
+                <h6 data-t="lsQ">Mihin aikaan juna lähtee?</h6>
+                <div class="opt"><i>A</i>14.05</div>
+                <div class="opt ok"><i>B</i>14.15</div>
+                <div class="opt"><i>C</i>15.14</div>
+              </div>
+            </div>
+            <span class="home-ind"></span>
+          </div>
+        </div>
+        <figcaption><b>Native-speed listening</b><span>Slow down, rewind, and train your ear for the exam audio.</span></figcaption>
+      </figure>
+
+      <!-- SCREEN: Speaking -->
+      <figure class="reveal">
+        <div class="phone sm" data-screen="speak">
+          <div class="screen dark">
+            <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+            <div class="pad">
+              <div class="app-top">
+                <span class="x">✕</span>
+                <div class="mini-progress" style="background:rgba(255,255,255,.1)"><span style="width:70%;background:var(--c-speak)"></span></div>
+                <span class="chip">🎙 Speak</span>
+              </div>
+              <div style="display:flex;flex-direction:column">
+                <div class="bubble tutor"><div class="who"><i></i>Tutor Aino</div><span data-t="spPrompt">Kerro, mitä teit viime viikonloppuna.</span></div>
+                <div class="bubble me" data-t="spAnswer">Lauantaina kävin torilla ja <u>ostin</u> mansikoita. Illalla katsoin elokuvan.</div>
+              </div>
+              <div class="scores">
+                <div class="score hi"><b>86</b><small>Pronunciation</small></div>
+                <div class="score mid"><b>74</b><small>Fluency</small></div>
+                <div class="score hi"><b>A2+</b><small>Grammar</small></div>
+              </div>
+              <div class="mic-wrap">
+                <div class="livewave" data-live="16"></div>
+                <div class="mic"><svg><use href="#i-speak"/></svg></div>
+                <small>Listening… tap to stop</small>
+              </div>
+            </div>
+            <span class="home-ind"></span>
+          </div>
+        </div>
+        <figcaption><b>AI speaking partner</b><span>Real conversations with scores for pronunciation and fluency.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ROADMAP ============================== -->
+<section class="roadmap" id="roadmap">
+  <div class="container">
+    <div class="road-visual reveal">
+      <!-- SCREEN: Progress -->
+      <div class="phone" data-screen="progress">
+        <div class="screen">
+          <div class="sb"><span>9:41</span><span class="sb-i"><i></i><b></b></span></div>
+          <div class="pad">
+            <p class="p-eyebrow">Week 14 of 26</p>
+            <p class="app-title">Your path to B1</p>
+            <div class="cefr">
+              <h6>CEFR level <span>A2 · 60%</span></h6>
+              <div class="cefr-rail">
+                <span class="node done">A0</span><span class="bar"><span style="width:100%"></span></span>
+                <span class="node done">A1</span><span class="bar"><span style="width:100%"></span></span>
+                <span class="node cur">A2</span><span class="bar"><span style="width:0%"></span></span>
+                <span class="node goal">B1</span>
+              </div>
+              <div class="row"><span>Started May 13</span><span>YKI-ready Nov 11</span></div>
+            </div>
+            <div class="ready">
+              <h6>YKI readiness <span>Mock test Sat</span></h6>
+              <div class="rbar"><div>Reading<span>72%</span></div><p><i style="width:72%;background:var(--c-read)"></i></p></div>
+              <div class="rbar"><div>Listening<span>68%</span></div><p><i style="width:68%;background:var(--c-listen)"></i></p></div>
+              <div class="rbar"><div>Writing<span>55%</span></div><p><i style="width:55%;background:var(--c-words)"></i></p></div>
+              <div class="rbar"><div>Speaking<span>61%</span></div><p><i style="width:61%;background:var(--c-speak)"></i></p></div>
+            </div>
+            <div class="ready">
+              <h6>Last 6 weeks <span>41 of 42 days</span></h6>
+              <div class="heat" data-heat="42"></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <span><svg><use href="#i-home"/></svg>Today</span>
+            <span><svg><use href="#i-words"/></svg>Cards</span>
+            <span><svg><use href="#i-exam"/></svg>Mock YKI</span>
+            <span class="on"><svg><use href="#i-chart"/></svg>Progress</span>
+          </nav>
+          <span class="home-ind"></span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-head reveal" style="margin-bottom:40px">
+        <span class="eyebrow-tag">Your six-month roadmap</span>
+        <h2>A0 to B1, one week at a time</h2>
+        <p>182 lessons across 26 weeks, about 90 hours of focused practice. The curriculum adapts to your results, so you spend time where you need it most.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="lvl">A1</span><span class="when">Months 1–2</span><h3>Survival basics</h3><p>Greetings, numbers, shopping, the case system's first steps. You'll introduce yourself and handle simple everyday situations.</p></li>
+        <li class="reveal"><span class="lvl">A2</span><span class="when">Months 3–4</span><h3>Everyday life</h3><p>Work, housing, health and public services. Past tense, longer texts, and conversations on familiar topics.</p></li>
+        <li class="reveal"><span class="lvl">B1</span><span class="when">Months 5–6</span><h3>Exam ready</h3><p>Opinions, explanations and formal writing. Weekly full-length mock YKI tests with a score for each part of the exam.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== YKI ============================== -->
+<section class="yki" id="yki">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow-tag">Built around the YKI test</span>
+      <h2>Practice exactly what you'll be tested on</h2>
+      <p>The YKI intermediate test (keskitaso / mellannivå) measures four skills. Polku trains every one of them and tells you where you stand before you book your exam.</p>
+    </div>
+    <div class="yki-grid">
+      <div class="yki-card reveal"><span class="num">01</span><h3>Reading</h3><p>Understand notices, emails and news articles. Practice with timed comprehension tasks in the real exam format.</p></div>
+      <div class="yki-card reveal"><span class="num">02</span><h3>Listening</h3><p>Follow announcements, dialogues and radio clips at natural speed, with no transcript on mock test day.</p></div>
+      <div class="yki-card reveal"><span class="num">03</span><h3>Writing</h3><p>Write messages, complaints and opinion texts. Get AI feedback on grammar, vocabulary and task completion.</p></div>
+      <div class="yki-card reveal"><span class="num">04</span><h3>Speaking</h3><p>Rehearse recorded-response tasks like the real test: describe situations, react and give your opinion.</p></div>
+    </div>
+    <div class="yki-band reveal">
+      <div>
+        <h3>Target: YKI level 3 (B1)</h3>
+        <p>The level needed for Finnish citizenship, and accepted by many employers and study programmes.</p>
+      </div>
+      <div class="levels" aria-label="YKI levels 1 to 6"><span>1</span><span>2</span><span class="target">3</span><span>4</span><span>5</span><span>6</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow-tag">FAQ</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal" open>
+        <summary>Can I really get from zero to B1 in six months?</summary>
+        <p>With 30 minutes every day, you'll put in around 90 hours of focused, structured practice. Results depend on your background and consistency. Polku's weekly mock tests show your real progress, so you'll know when you're ready to book the exam.</p>
+      </details>
+      <details class="reveal">
+        <summary>Should I choose Finnish or Swedish?</summary>
+        <p>Both are official languages of Finland, and the YKI test is available in each. Finnish is spoken by most people in Finland; Swedish can be a good fit if you live on the coast or already know another Scandinavian language. You can switch tracks at any time.</p>
+      </details>
+      <details class="reveal">
+        <summary>What if I miss a day?</summary>
+        <p>Life happens. Your plan rebalances automatically, and streak freezes keep your progress safe. Flashcard reviews wait for you; nothing is lost.</p>
+      </details>
+      <details class="reveal">
+        <summary>Does it work offline?</summary>
+        <p>Yes. Download the next week of lessons and study on the train or anywhere without a connection. The AI speaking practice needs internet.</p>
+      </details>
+      <details class="reveal">
+        <summary>Is Polku affiliated with the official YKI test?</summary>
+        <p>No. Polku is an independent preparation app. The YKI test is organised by the Finnish National Agency for Education (Opetushallitus) and the University of Jyväskylä.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="cta" id="download">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>Your first lesson takes 30 minutes.</h2>
+      <p>Start today and be ready for YKI by <strong data-t="readyBy">May</strong>. Free to download on iOS and Android.</p>
+      <div class="stores">
+        <a class="store" href="#" aria-label="Download on the App Store (coming soon)">
+          <svg><use href="#i-apple"/></svg>
+          <span><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="store" href="#" aria-label="Get it on Google Play (coming soon)">
+          <svg><use href="#i-gplay"/></svg>
+          <span><small>GET IT ON</small><strong>Google Play</strong></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#fecc02"/><path d="M10 29c4-1 6-5 9-9s6-7 11-8" stroke="#081a36" stroke-width="3.4" fill="none" stroke-linecap="round"/><circle cx="10" cy="29" r="3" fill="#081a36"/><circle cx="30" cy="12" r="3" fill="#081a36"/></svg>
+      Polku
+    </a>
+    <nav>
+      <a href="mockups.html">Mockups</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </nav>
+    <span>© <span id="year">2026</span> Polku. Not affiliated with the official YKI test.</span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
