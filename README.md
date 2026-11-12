@@ -1,6 +1,6 @@
 # YKItie — YKI prep landing page
 
-Planned domain: **ykitie.app**
+Domain: **ykitie.com**
 
 Static landing page for **YKItie**, a mobile app (iOS & Android) that takes learners from **A0 to B1 in six months** to pass the Finnish **YKI** language test, in **Finnish or Swedish**.
 
