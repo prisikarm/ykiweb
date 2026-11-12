@@ -12,12 +12,31 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#081a36">
   <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+  <!-- Google Tag Manager with Consent Mode v2: nothing is stored until the visitor accepts -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var c = null; try { c = localStorage.getItem("ykitie-consent"); } catch (e) {}
+      gtag("consent", "default", {
+        ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+        analytics_storage: c === "granted" ? "granted" : "denied",
+        wait_for_update: 500
+      });
+    })();
+    gtag("js", new Date());
+    dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MH88VLHT"></script>
+  <!-- End Google Tag Manager -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=2026111220295">
+  <link rel="stylesheet" href="assets/styles.css?v=202611122308">
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH88VLHT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -514,6 +533,7 @@
     <nav>
       <a href="mockups.html">Mockups</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
       <a href="#">Terms</a>
       <a href="mailto:info@ykitie.com">Contact</a>
     </nav>
@@ -561,6 +581,14 @@
   </div>
 </dialog>
 <div class="toast" role="status" aria-live="polite"></div>
-<script src="assets/app.js?v=2026111220295"></script>
+<script src="assets/app.js?v=202611122308"></script>
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We'd like to use Google Analytics cookies to understand how visitors use this site. No ads, no selling data. <a href="privacy.html#cookies">Learn more</a></p>
+  <div class="consent-actions">
+    <button type="button" class="consent-btn ghost" data-consent="denied">Decline</button>
+    <button type="button" class="consent-btn" data-consent="granted">Accept</button>
+  </div>
+</div>
+<script src="assets/consent.js?v=202611122308"></script>
 </body>
 </html>

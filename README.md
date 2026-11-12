@@ -55,6 +55,12 @@ The site uses [GoatCounter](https://www.goatcounter.com): free, open source, no 
 | `waitlist-open-<source>` | Waitlist form opened, and from which button |
 | `waitlist-signup` / `waitlist-signup-<language>-<platform>` | Someone joined the waitlist (e.g. `waitlist-signup-finnish-ios`) |
 
+### Google Tag Manager
+
+Container `GTM-MH88VLHT` loads on `index.html` and `privacy.html`, using **Google Consent Mode v2**: everything defaults to `denied`. A banner (`assets/consent.js`) asks for consent, and a “Cookie settings” footer link reopens it. `analytics_storage` becomes `granted` only after the visitor clicks Accept. Advertising consent stays denied.
+
+Every site event is also pushed to the dataLayer as `{ event: "ykitie_event", event_name: "<name>" }` (same names as in the table above), plus `consent_granted` / `consent_denied`. In GTM, create a Custom Event trigger on `ykitie_event` and use a Data Layer Variable `event_name`.
+
 ## Launch waitlist (email collection)
 
 While the store links are placeholders, the Download buttons, the “Start 3-day free trial” button and a “Get launch updates by email” link open a **waitlist form**. It asks for an email, Finnish or Swedish, and iPhone or Android, plus a required consent checkbox. It also records which button opened it.

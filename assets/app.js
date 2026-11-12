@@ -15,8 +15,11 @@
     document.head.appendChild(gc);
   }
 
-  // Send a named event, e.g. "download-ios-hero". Silently does nothing until GoatCounter has loaded.
+  // Send a named event, e.g. "download-ios-hero", to GoatCounter and Google Tag Manager.
   function track(name, title) {
+    // Google Tag Manager: every event is also pushed to the dataLayer as event "ykitie_event"
+    // with event_name, e.g. { event: "ykitie_event", event_name: "download-ios-hero" }.
+    try { if (window.dataLayer) window.dataLayer.push({ event: "ykitie_event", event_name: name, event_label: title || name }); } catch (e) {}
     try {
       if (window.goatcounter && typeof window.goatcounter.count === "function") {
         window.goatcounter.count({ path: name, title: title || name, event: true });

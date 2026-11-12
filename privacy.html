@@ -4,13 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · YKItie</title>
-  <meta name="description" content="How the YKItie website handles your personal data: the launch waitlist, cookie-free analytics, and your rights under the GDPR.">
+  <meta name="description" content="How the YKItie website handles your personal data: the launch waitlist, analytics, cookies, and your rights under the GDPR.">
   <meta name="theme-color" content="#081a36">
   <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+  <!-- Google Tag Manager with Consent Mode v2: nothing is stored until the visitor accepts -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var c = null; try { c = localStorage.getItem("ykitie-consent"); } catch (e) {}
+      gtag("consent", "default", {
+        ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+        analytics_storage: c === "granted" ? "granted" : "denied",
+        wait_for_update: 500
+      });
+    })();
+    gtag("js", new Date());
+    dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MH88VLHT"></script>
+  <!-- End Google Tag Manager -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=2026111220295">
+  <link rel="stylesheet" href="assets/styles.css?v=202611122308">
   <style>
     .legal-hero { background: var(--navy); color: #fff; padding: 140px 0 56px; margin-top: -68px; }
     .legal-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; }
@@ -36,6 +53,8 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH88VLHT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="nav">
   <div class="container">
@@ -60,7 +79,7 @@
     <div class="summary">
       <h2>The short version</h2>
       <ul>
-        <li>This website uses <strong>no cookies</strong> and no advertising trackers.</li>
+        <li>This website sets <strong>no cookies unless you accept them</strong>. If you accept, Google Analytics cookies help us understand how the site is used. We don't use advertising cookies.</li>
         <li>We count visits with GoatCounter, which doesn't identify you or store your IP address.</li>
         <li>If you join the launch waitlist, we keep your email, language and phone type <strong>only to tell you when YKItie launches</strong>.</li>
         <li>We never sell or share your data for marketing. You can ask us to delete it at any time.</li>
@@ -89,7 +108,12 @@
     <p>We use <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a> to count page views and clicks on buttons, such as the Download and language buttons. GoatCounter <strong>doesn't use cookies</strong>, doesn't store IP addresses, and doesn't build profiles of individual visitors. It records the page, the referring website, a rough location (country), and your browser, operating system and screen size, and shows these to us only as totals.</p>
     <p><strong>Legal basis:</strong> our legitimate interest (GDPR Article 6(1)(f)) in understanding how many people visit the site and which features interest them, done in a way that doesn't identify you.</p>
 
-    <h3>c) Technical data when you load the site</h3>
+    <h3>c) Google Analytics (only if you accept cookies)</h3>
+    <p>We use <strong>Google Tag Manager</strong> to load <strong>Google Analytics</strong>. When you first visit, a banner asks whether you accept analytics cookies. Until you click <em>Accept</em>, Google Analytics stores nothing on your device. It runs in Google's cookieless "consent mode", which sends only limited signals without identifiers. Advertising and personalization features stay switched off whatever you choose.</p>
+    <p>If you accept, Google Analytics sets cookies, such as <code>_ga</code> and <code>_ga_*</code>, that let us see how visitors move through the site, for example which pages they view and which buttons they click. This involves a pseudonymous identifier and data like your browser, device and approximate location.</p>
+    <p><strong>Legal basis:</strong> your consent (GDPR Article 6(1)(a), and section 205 of the Finnish Act on Electronic Communications Services for cookies). You can change your choice at any time with the <a href="#" data-cookie-settings>Cookie settings</a> link at the bottom of every page.</p>
+
+    <h3>d) Technical data when you load the site</h3>
     <p>Like every website, loading this page means your browser sends your IP address and browser details to the servers that deliver it. This site is hosted on <strong>GitHub Pages</strong>, and its fonts are loaded from <strong>Google Fonts</strong>. These providers may log this technical data for security and to run their services. We don't receive or use these logs.</p>
 
     <h2>3. Who processes your data</h2>
@@ -101,7 +125,7 @@
           <tr><td>Formspree, Inc. (USA)</td><td>Receives and stores waitlist sign-ups</td><td>Waitlist form contents</td></tr>
           <tr><td>GoatCounter</td><td>Visitor statistics</td><td>Anonymous visit counts</td></tr>
           <tr><td>GitHub, Inc. (USA)</td><td>Website hosting</td><td>Technical request data</td></tr>
-          <tr><td>Google LLC (USA)</td><td>Web fonts</td><td>Technical request data</td></tr>
+          <tr><td>Google LLC / Google Ireland Ltd</td><td>Web fonts, Tag Manager, and Analytics (Analytics only with your consent)</td><td>Technical request data; usage data and cookie identifiers if you accept</td></tr>
         </tbody>
       </table>
     </div>
@@ -110,7 +134,8 @@
     <h2>4. How long we keep it</h2>
     <ul>
       <li><strong>Waitlist data:</strong> until we've sent the launch announcement, and no longer than 12 months after launch, or until you unsubscribe or ask us to delete it, whichever comes first.</li>
-      <li><strong>Visitor statistics:</strong> kept as anonymous totals, which can't be linked back to you.</li>
+      <li><strong>Visitor statistics (GoatCounter):</strong> kept as anonymous totals, which can't be linked back to you.</li>
+      <li><strong>Google Analytics:</strong> cookies expire after up to 2 years. Data in Google Analytics is kept for <span class="ph">[14]</span> months.</li>
     </ul>
 
     <h2>5. Your rights</h2>
@@ -126,8 +151,9 @@
     <p>To use any of these rights, email <a href="mailto:info@ykitie.com">info@ykitie.com</a>. We'll reply within one month.</p>
     <p>You also have the right to lodge a complaint with the Finnish supervisory authority, the <a href="https://tietosuoja.fi/en" rel="noopener">Office of the Data Protection Ombudsman</a> (Tietosuojavaltuutetun toimisto), or with the authority in your own EU country.</p>
 
-    <h2>6. Cookies</h2>
-    <p>This website doesn't set any cookies. It saves one setting in your browser's local storage, the language you last previewed (Finnish or Swedish), so the page remembers it on your next visit. This never leaves your device, and you can clear it in your browser settings at any time.</p>
+    <h2 id="cookies">6. Cookies</h2>
+    <p>Without your consent, this website sets no cookies. If you accept analytics cookies, Google Analytics sets the cookies described in section 2c. You can withdraw consent at any time via <a href="#" data-cookie-settings>Cookie settings</a>; you can also delete existing cookies in your browser settings.</p>
+    <p>The site also saves two small settings in your browser's local storage: your cookie choice, and the language you last previewed (Finnish or Swedish), so the page remembers them on your next visit. These never leave your device, and you can clear them in your browser settings at any time.</p>
 
     <h2>7. The YKItie app</h2>
     <p>This policy covers this website only. The YKItie mobile app will have its own privacy policy, available before you download it.</p>
@@ -147,13 +173,14 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
     </nav>
     <span>© 2026 Prisikar Development. Not affiliated with the official YKI test.</span>
   </div>
 </footer>
 
 <script>
-  // Count privacy-page visits too (same cookie-free GoatCounter as the main site)
+  // Count privacy-page visits too (cookie-free GoatCounter, same as the main site)
   (function () {
     var s = document.createElement("script");
     s.async = true; s.src = "https://gc.zgo.at/count.js";
@@ -161,5 +188,13 @@
     document.head.appendChild(s);
   })();
 </script>
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We'd like to use Google Analytics cookies to understand how visitors use this site. No ads, no selling data. <a href="privacy.html#cookies">Learn more</a></p>
+  <div class="consent-actions">
+    <button type="button" class="consent-btn ghost" data-consent="denied">Decline</button>
+    <button type="button" class="consent-btn" data-consent="granted">Accept</button>
+  </div>
+</div>
+<script src="assets/consent.js?v=202611122308"></script>
 </body>
 </html>
