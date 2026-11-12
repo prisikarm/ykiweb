@@ -47,10 +47,23 @@ The site uses [GoatCounter](https://www.goatcounter.com): free, open source, no 
 | `nav-get-app` | “Get the app” in the top menu |
 | `lang-fi` / `lang-sv` | Visitor switched the language preview (interest in Finnish vs Swedish) |
 
-While the store links are placeholders, clicking a store button shows a “coming soon” message instead of navigating.
+| `waitlist-open-<source>` | Waitlist form opened, and from which button |
+| `waitlist-signup` / `waitlist-signup-<language>-<platform>` | Someone joined the waitlist (e.g. `waitlist-signup-finnish-ios`) |
+
+## Launch waitlist (email collection)
+
+While the store links are placeholders, the Download buttons, the “Start 3-day free trial” button and a “Get launch updates by email” link open a **waitlist form**. It asks for an email, Finnish or Swedish, and iPhone or Android, plus a required consent checkbox. It also records which button opened it.
+
+Signups go to [Formspree](https://formspree.io) (the free plan takes 50 a month). Each one is emailed to you and can be exported as CSV.
+
+**Setup:** create a form on Formspree, copy its ID (the part after `/f/`), set `FORMSPREE_ID` near the top of `assets/app.js`, and push. While it's empty, buttons show a “coming soon” toast and the email link is hidden.
+
+**At launch:** set the real store URLs in the `href` of each `class="store"` link. Buttons with a real link go straight to the store.
 
 ## TODO before launch
 
+- Set `FORMSPREE_ID` in `assets/app.js` (see Launch waitlist).
+- Write a proper privacy policy page before collecting emails at scale (GDPR).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
 - Final app name and logo (“Polku” is a placeholder).

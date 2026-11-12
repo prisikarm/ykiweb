@@ -35,6 +35,77 @@
     toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, 3200);
   }
 
+  // ---------- Launch waitlist (Formspree) ----------
+  // 1. Create a free form at https://formspree.io and copy its ID (the part after /f/, e.g. "xyzabcde").
+  // 2. Put it here. While empty, store buttons just show a "coming soon" toast.
+  var FORMSPREE_ID = "";
+
+  var dlg = document.getElementById("waitlist");
+  var form = document.getElementById("wl-form");
+  var canWaitlist = !!(FORMSPREE_ID && dlg && typeof dlg.showModal === "function");
+
+  function currentLang() {
+    var b = document.querySelector('.lang-toggle button[aria-pressed="true"]');
+    return b && b.dataset.lang === "sv" ? "Swedish" : "Finnish";
+  }
+  function setRadio(name, value) {
+    var r = form.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (r) r.checked = true;
+  }
+  function showStep(step) {
+    dlg.querySelectorAll("[data-step]").forEach(function (el) { el.hidden = el.dataset.step !== step; });
+  }
+  function openWaitlist(source, platform) {
+    showStep("form");
+    form.reset();
+    setRadio("language", currentLang());
+    if (platform) setRadio("platform", platform);
+    else if (/android/i.test(navigator.userAgent)) setRadio("platform", "Android");
+    form.elements.source.value = source;
+    form.querySelector(".wl-error").hidden = true;
+    form.elements.email.removeAttribute("aria-invalid");
+    dlg.showModal();
+    track("waitlist-open-" + source, "Waitlist opened (" + source + ")");
+  }
+
+  if (dlg) {
+    dlg.addEventListener("click", function (e) {
+      if (e.target === dlg || e.target.closest("[data-close]")) dlg.close();
+      var pv = e.target.closest("[data-privacy]");
+      if (pv) { e.preventDefault(); var n = document.getElementById("wl-privacy-note"); n.hidden = !n.hidden; }
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var err = form.querySelector(".wl-error"), btn = form.querySelector(".wl-submit");
+      var email = form.elements.email;
+      function fail(msg) { err.textContent = msg; err.hidden = false; }
+      err.hidden = true;
+      if (!email.value.trim() || !email.checkValidity()) {
+        email.setAttribute("aria-invalid", "true"); email.focus();
+        return fail("Please enter a valid email address.");
+      }
+      email.removeAttribute("aria-invalid");
+      if (!form.elements.consent.checked) return fail("Please tick the box so we're allowed to email you.");
+      if (form.elements._gotcha.value) { showStep("done"); return; } // bot
+
+      btn.disabled = true; btn.textContent = "Sending…";
+      var data = new FormData(form);
+      data.append("_subject", "Polku waitlist: " + data.get("language") + " / " + data.get("platform"));
+      fetch("https://formspree.io/f/" + FORMSPREE_ID, { method: "POST", body: data, headers: { Accept: "application/json" } })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          track("waitlist-signup", "Waitlist signup");
+          track("waitlist-signup-" + String(data.get("language")).toLowerCase() + "-" + String(data.get("platform")).toLowerCase());
+          showStep("done");
+        })
+        .catch(function () { fail("Something went wrong. Please try again in a moment."); })
+        .then(function () { btn.disabled = false; btn.textContent = "Notify me at launch"; });
+    });
+  }
+
   document.addEventListener("click", function (e) {
     var store = e.target.closest("[data-store]");
     if (store) {
@@ -42,13 +113,27 @@
       track("download-" + os + "-" + where, "Download " + (os === "ios" ? "App Store" : "Google Play") + " (" + where + ")");
       if (store.getAttribute("href") === "#") {
         e.preventDefault();
-        toast((os === "ios" ? "App Store" : "Google Play") + " launch coming soon. Thanks for your interest!");
+        if (canWaitlist) openWaitlist("download-" + os + "-" + where, os === "ios" ? "iOS" : "Android");
+        else toast((os === "ios" ? "App Store" : "Google Play") + " launch coming soon. Thanks for your interest!");
       }
       return;
     }
+    var w = e.target.closest("[data-waitlist]");
+    if (w) {
+      e.preventDefault();
+      if (canWaitlist) openWaitlist(w.dataset.waitlist);
+      else toast("Launch updates by email are coming soon.");
+      return;
+    }
     var t = e.target.closest("[data-track]");
-    if (t) track(t.dataset.track);
+    if (t) {
+      track(t.dataset.track);
+      if (canWaitlist && t.dataset.track === "trial-click-pricing") { e.preventDefault(); openWaitlist("trial-pricing"); }
+    }
   });
+
+  // Hide the email link entirely until the waitlist is connected
+  if (!canWaitlist) document.querySelectorAll(".notify-link").forEach(function (el) { el.hidden = true; });
 
   // ---------- Finnish / Swedish content for the mockups ----------
   var T = {

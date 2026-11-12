@@ -284,6 +284,62 @@ footer .logo-mark { width: 28px; height: 28px; }
 footer nav { display: flex; gap: 22px; }
 footer nav a:hover { color: var(--ink); }
 
+/* Waitlist dialog */
+.waitlist {
+  width: min(460px, calc(100% - 32px)); max-height: calc(100% - 32px); overflow: auto;
+  border: 0; border-radius: 28px; padding: 0; color: var(--ink); background: #fff;
+  box-shadow: 0 40px 80px -20px rgba(8, 26, 54, .55);
+}
+.waitlist::backdrop { background: rgba(8, 26, 54, .6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.waitlist[open] { animation: pop .28s ease-out; }
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(.97); } }
+.wl-body { padding: 36px 32px 30px; }
+.wl-close {
+  position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border-radius: 50%;
+  border: 0; background: var(--snow); color: var(--muted); font-size: 15px; cursor: pointer;
+}
+.wl-close:hover { background: var(--line); color: var(--ink); }
+.wl-badge { display: inline-block; background: #fff4d6; color: #8a5a00; font-weight: 700; font-size: 12px; letter-spacing: .04em; padding: 5px 11px; border-radius: 999px; }
+.waitlist h2 { font-size: 28px; font-weight: 800; margin: 14px 0 8px; }
+.wl-lede { color: var(--muted); font-size: 15px; }
+#wl-form { display: grid; gap: 16px; margin-top: 22px; }
+.wl-field span, .wl-seg legend { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; padding: 0; }
+.wl-field input {
+  width: 100%; font: 16px var(--font-body); padding: 13px 14px; border-radius: 12px;
+  border: 1.5px solid var(--line); background: var(--snow); color: var(--ink);
+}
+.wl-field input:focus { outline: none; border-color: var(--blue); background: #fff; box-shadow: 0 0 0 4px rgba(31, 95, 224, .12); }
+.wl-field input[aria-invalid="true"] { border-color: var(--red); }
+.wl-seg { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.wl-seg legend { grid-column: 1 / -1; }
+.wl-seg label { cursor: pointer; }
+.wl-seg input { position: absolute; opacity: 0; pointer-events: none; }
+.wl-seg span {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px; border-radius: 12px; border: 1.5px solid var(--line); font-weight: 600; font-size: 14px;
+  transition: border-color .15s, background .15s;
+}
+.wl-seg input:checked + span { border-color: var(--navy); background: #eef3ff; }
+.wl-seg input:focus-visible + span { box-shadow: 0 0 0 4px rgba(31, 95, 224, .2); }
+.wl-seg .flag { display: inline-block; }
+.wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.wl-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--muted); cursor: pointer; }
+.wl-consent input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--navy); flex: none; }
+.wl-consent a { color: var(--blue); text-decoration: underline; }
+.wl-error { color: var(--red); font-size: 13.5px; font-weight: 600; margin: -4px 0 0; }
+.wl-submit { width: 100%; justify-content: center; padding: 15px; font-size: 16px; background: var(--navy); color: #fff; border: 0; cursor: pointer; font-family: var(--font-body); }
+.wl-submit:disabled { opacity: .6; cursor: progress; }
+.wl-privacy { margin-top: 14px; font-size: 12.5px; color: var(--muted); background: var(--snow); padding: 12px 14px; border-radius: 12px; }
+.wl-done { text-align: center; padding-top: 48px; }
+.wl-done .wl-lede { margin-bottom: 24px; }
+.wl-check { width: 68px; height: 68px; margin: 0 auto; border-radius: 50%; background: #dcfce7; color: var(--green); display: grid; place-items: center; font-size: 32px; font-weight: 800; }
+.notify-link {
+  margin-top: 22px; background: none; border: 0; color: rgba(255, 255, 255, .8); font: 15px var(--font-body); cursor: pointer;
+}
+.notify-link:hover { color: #fff; }
+.notify-link u { text-underline-offset: 3px; }
+@media (max-width: 640px) { .wl-body { padding: 32px 22px 24px; } .waitlist h2 { font-size: 24px; } }
+
 /* Toast */
 .toast {
   position: fixed; left: 50%; bottom: 28px; z-index: 100;

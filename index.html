@@ -497,6 +497,7 @@
           <span><small>GET IT ON</small><strong>Google Play</strong></span>
         </a>
       </div>
+      <button type="button" class="notify-link" data-waitlist="cta-email">Not ready to download? <u>Get launch updates by email</u></button>
     </div>
   </div>
 </section>
@@ -517,6 +518,45 @@
   </div>
 </footer>
 
+<dialog class="waitlist" id="waitlist" aria-labelledby="wl-title">
+  <button type="button" class="wl-close" data-close aria-label="Close">✕</button>
+  <div class="wl-body" data-step="form">
+    <span class="wl-badge">Launching soon</span>
+    <h2 id="wl-title">Be first to start learning</h2>
+    <p class="wl-lede">Polku isn't in the stores yet. Leave your email and we'll tell you the day it launches.</p>
+    <form id="wl-form" novalidate>
+      <label class="wl-field">
+        <span>Email</span>
+        <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      </label>
+      <fieldset class="wl-seg">
+        <legend>I want to learn</legend>
+        <label><input type="radio" name="language" value="Finnish" checked><span><i class="flag fi"></i>Finnish</span></label>
+        <label><input type="radio" name="language" value="Swedish"><span><i class="flag sv"></i>Swedish</span></label>
+      </fieldset>
+      <fieldset class="wl-seg">
+        <legend>My phone</legend>
+        <label><input type="radio" name="platform" value="iOS" checked><span>iPhone</span></label>
+        <label><input type="radio" name="platform" value="Android"><span>Android</span></label>
+      </fieldset>
+      <input type="hidden" name="source" value="">
+      <input type="text" name="_gotcha" class="wl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="wl-consent">
+        <input type="checkbox" name="consent" value="yes" required>
+        <span>Email me when Polku launches. I can unsubscribe anytime. See the <a href="#" data-privacy>privacy note</a>.</span>
+      </label>
+      <p class="wl-error" role="alert" hidden></p>
+      <button type="submit" class="btn wl-submit">Notify me at launch</button>
+    </form>
+    <p class="wl-privacy" hidden id="wl-privacy-note">We only use your email to tell you when Polku launches. It's stored with our form provider (Formspree) and never sold or shared. Want it deleted? Just reply to any email from us.</p>
+  </div>
+  <div class="wl-body wl-done" data-step="done" hidden>
+    <div class="wl-check">✓</div>
+    <h2>You're on the list!</h2>
+    <p class="wl-lede">We'll email you as soon as Polku is in the App Store and Google Play. <span data-t="hello">hei</span> for now!</p>
+    <button type="button" class="btn wl-submit" data-close>Back to the site</button>
+  </div>
+</dialog>
 <div class="toast" role="status" aria-live="polite"></div>
 <script src="assets/app.js"></script>
 </body>
