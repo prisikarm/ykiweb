@@ -62,7 +62,6 @@ Signups go to [Formspree](https://formspree.io) (the free plan takes 50 a month)
 
 ## TODO before launch
 
-- Set `FORMSPREE_ID` in `assets/app.js` (see Launch waitlist).
 - Write a proper privacy policy page before collecting emails at scale (GDPR).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.

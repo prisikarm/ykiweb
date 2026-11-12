@@ -38,7 +38,7 @@
   // ---------- Launch waitlist (Formspree) ----------
   // 1. Create a free form at https://formspree.io and copy its ID (the part after /f/, e.g. "xyzabcde").
   // 2. Put it here. While empty, store buttons just show a "coming soon" toast.
-  var FORMSPREE_ID = "";
+  var FORMSPREE_ID = "mkjrgbpj";
 
   var dlg = document.getElementById("waitlist");
   var form = document.getElementById("wl-form");
