@@ -13,7 +13,7 @@ Each daily lesson is **30 minutes**: Words (spaced-repetition flashcards, 8 min)
 | File | What it is |
 |---|---|
 | `index.html` | The landing page. All six app screens are built in HTML/CSS inside it. |
-| `privacy.html` | Privacy policy (GDPR). Remaining placeholder: privacy contact email. |
+| `privacy.html` | Privacy policy (GDPR). Contact: info@ykitie.com. |
 | `mockups.html` | Design board showing the six screens side by side (loads them from `index.html`). |
 | `assets/styles.css` | Site styles and phone-mockup styles. |
 | `assets/app.js` | FI/SV language toggle, generated waveform/heatmap, scroll reveal. |
@@ -67,7 +67,6 @@ Signups go to [Formspree](https://formspree.io) (the free plan takes 50 a month)
 
 ## TODO before launch
 
-- Add the privacy contact email in `privacy.html` (two `[PRIVACY CONTACT EMAIL]` spots).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
-- Privacy, Terms and Contact links in the footer.
+- Terms page (footer link is still a placeholder).
