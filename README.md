@@ -1,10 +1,10 @@
-# Polku — YKI prep landing page
+# MoiHej — YKI prep landing page
 
-Static landing page for **Polku**, a mobile app (iOS & Android) that takes learners from **A0 to B1 in six months** to pass the Finnish **YKI** language test, in **Finnish or Swedish**.
+Static landing page for **MoiHej**, a mobile app (iOS & Android) that takes learners from **A0 to B1 in six months** to pass the Finnish **YKI** language test, in **Finnish or Swedish**.
 
 Each daily lesson is **30 minutes**: Words (spaced-repetition flashcards, 8 min) → Read (7 min) → Listen (7 min) → Speak (AI tutor, 8 min).
 
-![App mockups](mockups/polku-mockups-fi.png)
+![App mockups](mockups/moihej-mockups-fi.png)
 
 ## Pages
 
@@ -68,5 +68,4 @@ Signups go to [Formspree](https://formspree.io) (the free plan takes 50 a month)
 - Add the privacy contact email in `privacy.html` (two `[PRIVACY CONTACT EMAIL]` spots).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
-- Final app name and logo (“Polku” is a placeholder).
 - Privacy, Terms and Contact links in the footer.

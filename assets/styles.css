@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Polku — YKI prep landing page
+   MoiHej — YKI prep landing page
    ========================================================================== */
 
 :root {
@@ -84,6 +84,8 @@ p { margin: 0; }
 .nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .logo { display: flex; align-items: center; gap: 10px; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -.02em; }
 .logo-mark { width: 34px; height: 34px; }
+.logo-hej { color: var(--yellow); }
+footer .logo-hej { color: var(--blue); }
 .nav-links { display: flex; gap: 30px; color: rgba(255, 255, 255, .78); font-size: 15px; }
 .nav-links a:hover { color: #fff; }
 
