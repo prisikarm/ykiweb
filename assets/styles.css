@@ -329,6 +329,7 @@ footer nav a:hover { color: var(--ink); }
 .wl-error { color: var(--red); font-size: 13.5px; font-weight: 600; margin: -4px 0 0; }
 .wl-submit { width: 100%; justify-content: center; padding: 15px; font-size: 16px; background: var(--navy); color: #fff; border: 0; cursor: pointer; font-family: var(--font-body); }
 .wl-submit:disabled { opacity: .6; cursor: progress; }
+.wl-privacy a { color: var(--blue); text-decoration: underline; }
 .wl-privacy { margin-top: 14px; font-size: 12.5px; color: var(--muted); background: var(--snow); padding: 12px 14px; border-radius: 12px; }
 .wl-done { text-align: center; padding-top: 48px; }
 .wl-done .wl-lede { margin-bottom: 24px; }
