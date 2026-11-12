@@ -33,7 +33,7 @@ Open http://localhost:8000 (`mockups.html` needs a server because it fetches `in
 
 ## Deploy to GitHub Pages
 
-Settings → Pages → Source: *Deploy from a branch* → `main` / root. The site will be served at `https://<user>.github.io/ykiweb/`.
+Served by GitHub Pages from `main` / root at **https://ykitie.com** (the `CNAME` file holds the domain). DNS is at Namecheap: 4 A records `185.199.108–111.153`, 4 AAAA records `2606:50c0:8000–8003::153`, and `www` CNAME → `prisikarm.github.io`.
 
 ## Analytics
 
