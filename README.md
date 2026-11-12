@@ -1,10 +1,12 @@
-# MoiHej — YKI prep landing page
+# YKItie — YKI prep landing page
 
-Static landing page for **MoiHej**, a mobile app (iOS & Android) that takes learners from **A0 to B1 in six months** to pass the Finnish **YKI** language test, in **Finnish or Swedish**.
+Planned domain: **ykitie.app**
+
+Static landing page for **YKItie**, a mobile app (iOS & Android) that takes learners from **A0 to B1 in six months** to pass the Finnish **YKI** language test, in **Finnish or Swedish**.
 
 Each daily lesson is **30 minutes**: Words (spaced-repetition flashcards, 8 min) → Read (7 min) → Listen (7 min) → Speak (AI tutor, 8 min).
 
-![App mockups](mockups/moihej-mockups-fi.png)
+![App mockups](mockups/ykitie-mockups-fi.png)
 
 ## Pages
 

@@ -1,4 +1,4 @@
-/* MoiHej landing page — small, dependency-free enhancements */
+/* YKItie landing page — small, dependency-free enhancements */
 (function () {
   "use strict";
 
@@ -23,7 +23,7 @@
       }
     } catch (e) { /* never break the page for analytics */ }
   }
-  window.moihejTrack = track;
+  window.ykitieTrack = track;
 
   // ---------- "Coming soon" toast for the placeholder store links ----------
   var toastEl = document.querySelector(".toast"), toastTimer;
@@ -93,7 +93,7 @@
 
       btn.disabled = true; btn.textContent = "Sending…";
       var data = new FormData(form);
-      data.append("_subject", "MoiHej waitlist: " + data.get("language") + " / " + data.get("platform"));
+      data.append("_subject", "YKItie waitlist: " + data.get("language") + " / " + data.get("platform"));
       fetch("https://formspree.io/f/" + FORMSPREE_ID, { method: "POST", body: data, headers: { Accept: "application/json" } })
         .then(function (r) {
           if (!r.ok) throw new Error("HTTP " + r.status);
@@ -186,7 +186,7 @@
     document.querySelectorAll(".lang-toggle button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
-    try { localStorage.setItem("moihej-lang", lang); } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem("ykitie-lang", lang); } catch (e) { /* storage unavailable */ }
   }
 
   document.addEventListener("click", function (e) {
@@ -239,7 +239,7 @@
 
   // Initial language (remembered per visitor)
   var saved = "fi";
-  try { saved = localStorage.getItem("moihej-lang") || "fi"; } catch (e) { /* ignore */ }
+  try { saved = localStorage.getItem("ykitie-lang") || "fi"; } catch (e) { /* ignore */ }
   setLang(saved);
 
   // ---------- Reveal on scroll ----------
