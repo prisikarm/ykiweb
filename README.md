@@ -11,7 +11,7 @@ Each daily lesson is **30 minutes**: Words (spaced-repetition flashcards, 8 min)
 | File | What it is |
 |---|---|
 | `index.html` | The landing page. All six app screens are built in HTML/CSS inside it. |
-| `privacy.html` | Privacy policy (GDPR). Fill in the yellow `[PLACEHOLDERS]` before relying on it. |
+| `privacy.html` | Privacy policy (GDPR). Remaining placeholder: privacy contact email. |
 | `mockups.html` | Design board showing the six screens side by side (loads them from `index.html`). |
 | `assets/styles.css` | Site styles and phone-mockup styles. |
 | `assets/app.js` | FI/SV language toggle, generated waveform/heatmap, scroll reveal. |
@@ -65,7 +65,7 @@ Signups go to [Formspree](https://formspree.io) (the free plan takes 50 a month)
 
 ## TODO before launch
 
-- Fill in the `[PLACEHOLDERS]` in `privacy.html` (controller name, address, contact email, date).
+- Add the privacy contact email in `privacy.html` (two `[PRIVACY CONTACT EMAIL]` spots).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
 - Final app name and logo (“Polku” is a placeholder).
