@@ -47,7 +47,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#download" class="btn">Get the app</a>
+    <a href="#download" class="btn" data-track="nav-get-app">Get the app</a>
   </div>
 </header>
 
@@ -63,11 +63,11 @@
       <h1>From <span class="hl" data-t="hello">hei</span> to B1<br>in six months.</h1>
       <p class="lede">Polku gets you ready for the YKI test in <strong data-t="langName">Finnish</strong> with one focused 30-minute lesson a day: new words, reading, listening and speaking, all in one session.</p>
       <div class="stores">
-        <a class="store" href="#" aria-label="Download on the App Store (coming soon)">
+        <a class="store" href="#" data-store="ios" data-where="hero" aria-label="Download on the App Store (coming soon)">
           <svg><use href="#i-apple"/></svg>
           <span><small>Download on the</small><strong>App Store</strong></span>
         </a>
-        <a class="store" href="#" aria-label="Get it on Google Play (coming soon)">
+        <a class="store" href="#" data-store="android" data-where="hero" aria-label="Get it on Google Play (coming soon)">
           <svg><use href="#i-gplay"/></svg>
           <span><small>GET IT ON</small><strong>Google Play</strong></span>
         </a>
@@ -420,7 +420,7 @@
           <li>Weekly full-length mock YKI tests</li>
           <li>Offline lessons &amp; progress tracking</li>
         </ul>
-        <a href="#download" class="btn plan-btn">Start 3-day free trial</a>
+        <a href="#download" class="btn plan-btn" data-track="trial-click-pricing">Start 3-day free trial</a>
         <p class="fine">Cancel anytime during the trial and you won't be charged.</p>
       </div>
 
@@ -488,11 +488,11 @@
       <h2>Your first lesson takes 30 minutes.</h2>
       <p>Start today and be ready for YKI by <strong data-t="readyBy">May</strong>. First 3 days free, then €49/month on iOS and Android.</p>
       <div class="stores">
-        <a class="store" href="#" aria-label="Download on the App Store (coming soon)">
+        <a class="store" href="#" data-store="ios" data-where="cta" aria-label="Download on the App Store (coming soon)">
           <svg><use href="#i-apple"/></svg>
           <span><small>Download on the</small><strong>App Store</strong></span>
         </a>
-        <a class="store" href="#" aria-label="Get it on Google Play (coming soon)">
+        <a class="store" href="#" data-store="android" data-where="cta" aria-label="Get it on Google Play (coming soon)">
           <svg><use href="#i-gplay"/></svg>
           <span><small>GET IT ON</small><strong>Google Play</strong></span>
         </a>
@@ -517,6 +517,7 @@
   </div>
 </footer>
 
+<div class="toast" role="status" aria-live="polite"></div>
 <script src="assets/app.js"></script>
 </body>
 </html>

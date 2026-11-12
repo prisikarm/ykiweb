@@ -30,8 +30,28 @@ Open http://localhost:8000 (`mockups.html` needs a server because it fetches `in
 
 Settings → Pages → Source: *Deploy from a branch* → `main` / root. The site will be served at `https://<user>.github.io/ykiweb/`.
 
+## Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com): free, open source, no cookies, so no cookie banner is needed under GDPR.
+
+**Setup:** create an account at goatcounter.com, choose a code (e.g. `polku`), then set `GOATCOUNTER_CODE` at the top of `assets/app.js` and push. While the code is empty, no analytics script loads at all. Local visits (`localhost`) are never counted.
+
+**What gets counted**
+
+| Event | Meaning |
+|---|---|
+| page views | Visitors and pages, plus referrers, countries, devices (automatic) |
+| `download-ios-hero` / `download-ios-cta` | App Store button, top of page / bottom of page |
+| `download-android-hero` / `download-android-cta` | Google Play button, top / bottom |
+| `trial-click-pricing` | “Start 3-day free trial” in the pricing card |
+| `nav-get-app` | “Get the app” in the top menu |
+| `lang-fi` / `lang-sv` | Visitor switched the language preview (interest in Finnish vs Swedish) |
+
+While the store links are placeholders, clicking a store button shows a “coming soon” message instead of navigating.
+
 ## TODO before launch
 
+- Set `GOATCOUNTER_CODE` in `assets/app.js` (see Analytics).
 - Replace the `href="#"` store links (search for `class="store"`) with real App Store / Google Play URLs.
 - Use official Apple / Google badge artwork per their brand guidelines.
 - Final app name and logo (“Polku” is a placeholder).
