@@ -101,6 +101,12 @@
         .then(function (r) {
           if (!r.ok) throw new Error("HTTP " + r.status);
           track("waitlist-signup", "Waitlist signup");
+          // Google Ads conversion: "Sign-up" (fires only after Formspree accepted the signup)
+          try {
+            if (typeof window.gtag === "function") {
+              window.gtag("event", "conversion", { send_to: "AW-18571950570/K1wkCIC1sLkdEOrz5ZdF", value: 1.0, currency: "EUR" });
+            }
+          } catch (e) { /* never break the signup for analytics */ }
           track("waitlist-signup-" + String(data.get("language")).toLowerCase() + "-" + String(data.get("platform")).toLowerCase());
           showStep("done");
         })

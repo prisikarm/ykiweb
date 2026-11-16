@@ -11,7 +11,9 @@
 
   function apply(choice) {
     if (typeof window.gtag === "function") {
-      window.gtag("consent", "update", { analytics_storage: choice === "granted" ? "granted" : "denied" });
+      var v = choice === "granted" ? "granted" : "denied";
+      // analytics + ad measurement only; ad personalization (remarketing) always stays denied
+      window.gtag("consent", "update", { analytics_storage: v, ad_storage: v, ad_user_data: v });
     }
     window.dataLayer && window.dataLayer.push({ event: "consent_" + choice });
   }

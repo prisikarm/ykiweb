@@ -19,7 +19,9 @@
     (function () {
       var c = null; try { c = localStorage.getItem("ykitie-consent"); } catch (e) {}
       gtag("consent", "default", {
-        ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+        ad_storage: c === "granted" ? "granted" : "denied",
+        ad_user_data: c === "granted" ? "granted" : "denied",
+        ad_personalization: "denied",
         analytics_storage: c === "granted" ? "granted" : "denied",
         wait_for_update: 500
       });
@@ -29,10 +31,13 @@
   </script>
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MH88VLHT"></script>
   <!-- End Google Tag Manager -->
+  <!-- Google tag for Google Ads conversion tracking (AW-18571950570); respects the consent defaults above -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18571950570"></script>
+  <script>gtag("config", "AW-18571950570");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=202611160814">
+  <link rel="stylesheet" href="assets/styles.css?v=202611161039">
   <script type="application/ld+json" id="yki-faq-jsonld">
 {
   "@context": "https://schema.org",
@@ -735,14 +740,14 @@
   </div>
 </dialog>
 <div class="toast" role="status" aria-live="polite"></div>
-<script src="assets/app.js?v=202611160814"></script>
+<script src="assets/app.js?v=202611161039"></script>
 <div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-  <p>We'd like to use Google Analytics cookies to understand how visitors use this site. No ads, no selling data. <a href="privacy.html#cookies">Learn more</a></p>
+  <p>We'd like to use Google cookies to measure our ads and understand how visitors use this site. No ad personalization, no selling data. <a href="privacy.html#cookies">Learn more</a></p>
   <div class="consent-actions">
     <button type="button" class="consent-btn ghost" data-consent="denied">Decline</button>
     <button type="button" class="consent-btn" data-consent="granted">Accept</button>
   </div>
 </div>
-<script src="assets/consent.js?v=202611160814"></script>
+<script src="assets/consent.js?v=202611161039"></script>
 </body>
 </html>
